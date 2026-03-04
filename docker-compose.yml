@@ -53,8 +53,8 @@ services:
       - "8126:8126"  # APM tracing port
       - "10516:10516" # logs intake TCP
     environment:
-      - DD_API_KEY=a662cc057622beeac049c2331e91f01a   #1d618bc55f7675e6486605b25c9211b5
-      - DD_SITE=datadoghq.eu
+      - DD_API_KEY==${DD_API_KEY}
+      - DD_SITE=${DD_SITE} 
       - DD_LOGS_ENABLED=true
       - DD_APM_ENABLED=true
       - DD_DOGSTATSD_NON_LOCAL_TRAFFIC=true
