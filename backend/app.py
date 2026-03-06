@@ -17,7 +17,7 @@ CORS(
     resources={r"/*": {"origins": "http://localhost:8080"}}
 )
 
-# 📜 Basic structured logging (stdout → Datadog picks this up)
+# 📜 Basic structured logging (stdout → Datadog picks this up, Includes spans id and traceid for correlation at Datadog APM)
 class JSONFormatter(logging.Formatter):
     def format(self, record):
         span = tracer.current_span()
